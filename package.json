@@ -17,11 +17,11 @@
     "format": "prettier --write \"**/*.{js,json,ts,md}\""
   },
   "dependencies": {
-    "@keystone-next/admin-ui": "^14.1.2",
-    "@keystone-next/auth": "^23.0.1",
-    "@keystone-next/fields": "^8.2.0",
-    "@keystone-next/keystone": "^17.1.1",
-    "dotenv": "^9.0.2"
+    "@keystone-next/admin-ui": "^15.0.0",
+    "@keystone-next/auth": "^25.0.0",
+    "@keystone-next/fields": "^9.0.0",
+    "@keystone-next/keystone": "^18.0.0",
+    "dotenv": "^10.0.0"
   },
   "devDependencies": {
     "prettier": "^2.3.0",
