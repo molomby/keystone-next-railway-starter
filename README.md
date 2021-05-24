@@ -1,9 +1,8 @@
-# Keystone Next on Heroku
+# Keystone Next on Railway
 
-A Keystone Next example/starter project for Heroku deployments.
+A Keystone Next example/starter project for [Railway](https://railway.app) deployments.
 
-This repo can be [deployed to Heroku](https://heroku.com/deploy?template=https://github.com/molomby/keystone-next-heroku-starter) directly,
-fork it to [run it locally](#local-dev) or use it as a basic [starter project](#starter-project).
+**TODO: Intro text**
 
 ## App Features
 
@@ -32,8 +31,8 @@ On MacOS you'd perform the following steps:
 brew install postgresql
 
 # Get the repo
-git clone https://github.com/molomby/keystone-next-heroku-starter
-cd keystone-next-heroku-starter
+git clone https://github.com/molomby/keystone-next-railway-starter
+cd keystone-next-railway-starter
 
 # Install node packages
 yarn
@@ -46,37 +45,12 @@ Then point your browser to [localhost:3000](http://localhost:3000).
 
 ## Starter Project
 
-If you want to use this codebase as a starting point for your own app, begin by [forking it](https://github.com/molomby/keystone-next-heroku-starter/fork) into your own account.
+If you want to use this codebase as a starting point for your own app, begin by [forking it](https://github.com/molomby/keystone-next-railway-starter/fork) into your own account.
 Then, clone that repo to your dev machine using the [local dev](#local-dev) steps above.
 
 ### Deployment
 
-The "Deploy to Heroku" button at the top is fun but it doesn't set you up for repeated deployments.
-The following process (for MacOS) creates, configures and deploys a Heroku app from scratch using the Heroku CLI:
-
-```sh
-# Get the Heroku cli (if you don't have it already)
-brew tap heroku/brew && brew install heroku
-
-# Authenticate (follow the prompts)
-heroku auth:login
-```
-
-Run these next steps from your codebase root, substituting `molomby-keystone-next-starter` for a unique name key for your app:
-
-```sh
-# Create the new app and configure a free postgres addon
-heroku create molomby-keystone-next-starter --addons=heroku-postgresql:hobby-dev
-
-# Adding a SESSION_SECRET env var will allow sessions to persist between dyno restarts
-heroku config:set SESSION_SECRET=$(head -c30 /dev/urandom | base64 | tr -dc 'A-Za-z0-9' | head -c30)
-
-# This previous step will also have configured a remote for your local git repo called "heroku"
-# Deploy your latest commit by pushing a branch to it
-git push heroku main
-```
-
-You'll see the build process output, then your app will appear online.
+**TODO: Deployment instructions**
 
 ### Migrations
 

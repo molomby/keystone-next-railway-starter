@@ -1,9 +1,9 @@
 {
-  "name": "keystone-next-heroku-starter",
+  "name": "keystone-next-railway-starter",
   "version": "1.0.0",
-  "description": "A Keystone Next example/starter project for Heroku deployments",
+  "description": "A Keystone Next example/starter project for Railway deployments",
   "main": "index.js",
-  "repository": "git@github.com:molomby/keystone-next-heroku-starter.git",
+  "repository": "git@github.com:molomby/keystone-next-railway-starter.git",
   "author": "John Molomby <john@thinkmill.com.au>",
   "license": "MIT",
   "private": false,
