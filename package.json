@@ -21,7 +21,9 @@
     "@keystone-next/auth": "^25.0.0",
     "@keystone-next/fields": "^9.0.0",
     "@keystone-next/keystone": "^18.0.0",
-    "dotenv": "^10.0.0"
+    "@keystone-next/session-store-redis": "^3.0.0",
+    "dotenv": "^10.0.0",
+    "redis": "^3.1.2"
   },
   "devDependencies": {
     "prettier": "^2.3.0",
