@@ -2,13 +2,15 @@
 
 A Keystone Next example/starter project for [Railway](https://railway.app) deployments.
 
-**TODO: Intro text**
+[Railway](https://railway.app) is an interesting new hosting provide.
+They offer Heroku-style deployments (Docker-based with "addons" for various data stores)
+with deep dev workflow integration, preview deploys, GitHub and Vercel integration.
+This project uses the [Postgres](https://docs.railway.app/plugins/postgresql) addon for data persistence
+and the [Redis](https://docs.railway.app/plugins/redis) addon for session storage.
 
-## ⚠️ Very WIP ⚠️
+To use this app, first deploy it to Railway with the button below, then follow the [local dev](#local-dev) instructions.
 
-This isn't really working great yet.
-Had some problems with `railway run`, builds and other wierdness.
-Might come back to it later.
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Fmolomby%2Fkeystone-next-railway-starter&plugins=postgresql%2Credis&envs=SESSION_SECRET&optionalEnvs=SESSION_SECRET&SESSION_SECRETDesc=A+securely+random+value%2C+32+chars+or+longer)
 
 ## App Features
 
@@ -19,7 +21,7 @@ It demos a number of Keystone features, including:
 
 - Some lists to play around with
 - Password based authentication
-- Stateless sessions
+- Stateful sessions (Redis)
 - Initial user creation workflow
 - Admin UI
 - GraphQL endpoint (`/api/graphql`), inc. GraphiQL (when `NODE_ENV !== 'production'`)
@@ -28,14 +30,19 @@ It demos a number of Keystone features, including:
 
 ## Local Dev
 
-This codebase can be run locally by cloning it to your dev environment.
-On MacOS you'd perform the following steps:
+The suggested Railway dev workflow assumes you have a Railway deployment to which you can link your local codebase.
+The easiest way to achieve this is with the using the "Deploy" button above.
+An alternative is to fork the repo first then use `railway init`.
+These instructions assume the former approach.
+
+When you click the "Deploy" button, Railway will prompt you for GitHub auth to fork the repo to your own org/account.
+From there you can clone the repo to your local dev machine and attach it to the Railway project.
+You do not need to wait for the initial build/deployment to complete.
+
+Note, you do not need Postgres or Redis installed locally for this to work – Railway will create remote Docker containers for these services.
+However, you will need to install the [Railway CLI](https://docs.railway.app/cli/quick-start).
 
 ```sh
-# Install postgres (if you don't have it already)
-# This will add a DB role matching your OS username
-brew install postgresql
-
 # Get the repo
 git clone https://github.com/molomby/keystone-next-railway-starter
 cd keystone-next-railway-starter
@@ -43,21 +50,20 @@ cd keystone-next-railway-starter
 # Install node packages
 yarn
 
-# Start the app
-# A DB will be created automatically and migrated to the latest schema
-yarn dev
+# Link the app to the new Railway Project
+railway link keystone-next-railway-starter
+
+# Instruct railway to run the app using yarn dev
+railway run yarn dev
 ```
 
-Then point your browser to [localhost:3000](http://localhost:3000).
+Then point your browser to [localhost:3000](http://localhost:3000) to access the app.
 
-## Starter Project
+## Deployments
 
-If you want to use this codebase as a starting point for your own app, begin by [forking it](https://github.com/molomby/keystone-next-railway-starter/fork) into your own account.
-Then, clone that repo to your dev machine using the [local dev](#local-dev) steps above.
-
-### Deployment
-
-**TODO: Deployment instructions**
+If you followed the instructions above ("Deploy" button then clone and link local repo), you'll already have a deployment trigger configured on your Railway project.
+To deploy changes, simply commit them and push to the `main` branch on GitHub.
+This will trigger a build (to your default environment) which can be tracked in the [Railway dashboard](https://railway.app/dashboard).
 
 ### Migrations
 
