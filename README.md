@@ -4,6 +4,12 @@ A Keystone Next example/starter project for [Railway](https://railway.app) deplo
 
 **TODO: Intro text**
 
+## ⚠️ Very WIP ⚠️
+
+This isn't really working great yet.
+Had some problems with `railway run`, builds and other wierdness.
+Might come back to it later.
+
 ## App Features
 
 The app Keystone schema is a mix of the Keystone Next
@@ -41,6 +47,7 @@ yarn
 # A DB will be created automatically and migrated to the latest schema
 yarn dev
 ```
+
 Then point your browser to [localhost:3000](http://localhost:3000).
 
 ## Starter Project
