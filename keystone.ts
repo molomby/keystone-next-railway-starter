@@ -35,6 +35,6 @@ export default withAuth(
         store: redisSessionStore({ client: redis.createClient(REDIS_URL) }),
       }),
       { Person: 'name isAdmin' }
-    )
+    ),
   })
 );

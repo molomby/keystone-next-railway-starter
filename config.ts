@@ -5,7 +5,8 @@ export const PORT = parseInt(process.env.PORT) || 3000;
 
 // Postgres URI
 export const DATABASE_URL =
-  process.env.DATABASE_URL || `postgres://${process.env.USER}@localhost/keystone-next-railway-starter`;
+  process.env.DATABASE_URL ||
+  `postgres://${process.env.USER}@localhost/keystone-next-railway-starter`;
 
 // Redis (session store) URL
 export const REDIS_URL = process.env.REDIS_URL || `redis://localhost`;
