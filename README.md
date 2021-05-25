@@ -22,7 +22,7 @@ It demos a number of Keystone features, including:
 - Some lists to play around with
 - Password based authentication
 - Stateful sessions (Redis)
-- Initial user creation workflow
+- Initial use and test data seeded in migration
 - Admin UI
 - GraphQL endpoint (`/api/graphql`), inc. GraphiQL (when `NODE_ENV !== 'production'`)
 - Access control
@@ -58,6 +58,7 @@ railway run yarn dev
 ```
 
 Then point your browser to [localhost:3000](http://localhost:3000) to access the app.
+An initial user is created but a seed data migration (login: `admin@example.com` / `TPlfK14TjUgo`).
 
 ## Deployments
 
